@@ -1,11 +1,5 @@
 # 📋 Cadastro de Clientes — UTFPR
 
-![Node.js](https://img.shields.io/badge/Node.js-18.x-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-4.x-000000?style=flat-square&logo=express&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.x-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=flat-square)
-![UTFPR](https://img.shields.io/badge/Projeto-Acadêmico%20UTFPR-1565C0?style=flat-square)
-
 > Sistema web de gerenciamento completo de clientes — projeto acadêmico.
 
 ---
