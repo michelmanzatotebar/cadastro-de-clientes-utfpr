@@ -1,6 +1,6 @@
 # 📋 Cadastro de Clientes — UTFPR
 
-> Sistema web de gerenciamento completo de clientes — projeto acadêmico.
+Sistema web de gerenciamento completo de clientes — projeto acadêmico.
 
 ---
 
@@ -50,4 +50,4 @@ npm install
 
 ---
 
-> Projeto Acadêmico · UTFPR · 2026
+Projeto Acadêmico · UTFPR · 2026
