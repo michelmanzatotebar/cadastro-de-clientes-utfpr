@@ -28,7 +28,7 @@ Aplicação web para gerenciamento completo de clientes, desenvolvida como proje
 
 ---
 
-## 🚀 Como rodar
+## ⚙️ Como rodar
 
 ```bash
 # Clone o repositório
