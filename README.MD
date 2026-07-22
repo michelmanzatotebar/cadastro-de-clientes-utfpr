@@ -1,12 +1,13 @@
 # 📋 Cadastro de Clientes — UTFPR
 
-Sistema web de gerenciamento completo de clientes — projeto acadêmico.
+Sistema web de gerenciamento completo de clientes para filiais de sua loja — projeto acadêmico.
 
 ---
 
 ## 📌 Sobre o projeto
 
-Aplicação web para gerenciamento completo de clientes, desenvolvida como projeto acadêmico na UTFPR. Permite cadastrar, visualizar, editar e remover clientes, com persistência de dados em JSON.
+Aplicação web para gerenciamento completo de clientes, com sistema de criar filiais para gestao de suas loja(s).
+Permite cadastrar, visualizar, editar e remover clientes, com persistência de dados em JSON.
 
 ---
 
@@ -16,6 +17,7 @@ Aplicação web para gerenciamento completo de clientes, desenvolvida como proje
 - Listagem de clientes
 - Edição de dados
 - Remoção de clientes
+- Criar filiais para gestão de clientes
 
 ---
 
