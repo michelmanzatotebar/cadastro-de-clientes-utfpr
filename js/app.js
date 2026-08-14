@@ -76,3 +76,9 @@ function mostrarAlerta(containerId, mensagem, tipo = "danger") {
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>`;
 }
+
+window.API_BASE = API_BASE;
+window.ClientesAPI = ClientesAPI;
+window.FiliaisAPI = FiliaisAPI;
+window.checarConexao = checarConexao;
+window.mostrarAlerta = mostrarAlerta;
