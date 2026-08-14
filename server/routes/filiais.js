@@ -60,7 +60,7 @@ router.delete('/:id', function(req, res) {
 
   const clientes = db.lerArquivo('clientes.json');
   clientes.forEach(function(cliente) {
-    cliente.filiais = cliente.filiais.filter(function(id) { return id !== req.params.id; });
+    cliente.filiais = (cliente.filiais || []).filter(function(id) { return id !== req.params.id; });
   });
   db.salvarArquivo('clientes.json', clientes);
 

@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "1786732338139",
+    "nomeFilial": "teste",
+    "logradouro": "rua teste",
+    "emailFilial": "teste@email.com",
+    "status": true,
+    "telefone": "6799999999"
+  }
+]
