@@ -14,18 +14,26 @@ async function carregarFiliaisNoFormulario() {
     filiaisCache = await FiliaisAPI.listar();
 
     if (!filiaisCache.length) {
-      container.innerHTML = '<span class="text-muted small">Nenhuma filial cadastrada ainda. Cadastre uma filial primeiro.</span>';
+      container.innerHTML = '<span class="text-muted small">Nenhuma filial cadastrada ainda.</span>';
       return;
     }
 
-    container.innerHTML = filiaisCache
-      .map(
-        (filial) => `
-        <div class="form-check">
-          <input class="form-check-input filial-check" type="checkbox" value="${filial.id}" id="filial-${filial.id}">
-          <label class="form-check-label" for="filial-${filial.id}">${filial.nomeFilial}</label>
-        </div>`
-      )
+    const filiaisOrdenadas = [...filiaisCache].sort((a, b) => {
+      if (a.status === b.status) return a.nomeFilial.localeCompare(b.nomeFilial);
+      return Number(b.status) - Number(a.status);
+    });
+
+    container.innerHTML = filiaisOrdenadas
+      .map((filial) => {
+        const inativa = filial.status === false;
+        const nomeExibicao = inativa ? `${filial.nomeFilial} (Inativa)` : filial.nomeFilial;
+
+        return `
+        <div class="form-check ${inativa ? "form-check-inativa" : ""}">
+          <input class="form-check-input filial-check" type="checkbox" value="${filial.id}" id="filial-${filial.id}" ${inativa ? "disabled" : ""}>
+          <label class="form-check-label" for="filial-${filial.id}">${nomeExibicao}</label>
+        </div>`;
+      })
       .join("");
   } catch (erro) {
     container.innerHTML = '<span class="text-danger small">Não foi possível carregar as filiais.</span>';
@@ -70,8 +78,10 @@ function linhaCliente(cliente) {
       <td>${cliente.telefone}</td>
       <td>${nomesFiliais}</td>
       <td class="text-end">
-        <button class="btn btn-sm btn-outline-secondary" data-editar="${cliente.id}">Editar</button>
-        <button class="btn btn-sm btn-outline-danger" data-excluir="${cliente.id}">Excluir</button>
+        <div class="table-actions">
+          <button class="btn btn-sm btn-outline-secondary" data-editar="${cliente.id}">Editar</button>
+          <button class="btn btn-sm btn-outline-danger" data-excluir="${cliente.id}">Excluir</button>
+        </div>
       </td>
     </tr>`;
 }
