@@ -14,17 +14,19 @@
 :root {
   --accent: #2d6a4f;
   --accent-dark: #1b4332;
-  --bg: #f7f8f6;
+  --bg: #f4f7f4;
   --card-bg: #ffffff;
-  --text: #1f2921;
-  --muted: #6b7a70;
-  --border: #e1e6e2;
+  --text: #1f2a24;
+  --muted: #607066;
+  --border: #dfe8e2;
+  --soft: #edf5ef;
 }
 
 body {
-  background: var(--bg);
+  background: linear-gradient(180deg, #f4f7f4 0%, #eef4f1 100%);
   color: var(--text);
   font-family: "Segoe UI", Roboto, -apple-system, sans-serif;
+  margin: 0;
 }
 
 .navbar-brand {
@@ -33,7 +35,9 @@ body {
 }
 
 .navbar-custom {
-  background: var(--accent-dark);
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .navbar-custom .nav-link,
@@ -41,51 +45,199 @@ body {
   color: #ffffff !important;
 }
 
+.navbar-custom .nav-link {
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-custom .nav-link:hover,
 .navbar-custom .nav-link.active {
-  color: #d8f3dc !important;
+  opacity: 1;
+  color: #dff7e7 !important;
   font-weight: 600;
 }
 
-.btn-accent {
+.container {
+  max-width: 1100px;
+}
+
+main.container {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+}
+
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.7rem 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-accent,
+.btn-primary {
   background-color: var(--accent);
   border-color: var(--accent);
   color: #fff;
 }
 
-.btn-accent:hover {
+.btn-accent:hover,
+.btn-primary:hover {
   background-color: var(--accent-dark);
   border-color: var(--accent-dark);
   color: #fff;
 }
 
+.btn-salvar {
+  min-width: 160px;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
+.btn-outline-secondary {
+  border-radius: 10px;
+}
+
 .card-custom {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 16px;
   background: var(--card-bg);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 28px rgba(26, 52, 42, 0.05);
 }
 
 .card-custom .card-header {
-  background: transparent;
+  background: linear-gradient(180deg, #f9fbfa 0%, #f2f7f3 100%);
   border-bottom: 1px solid var(--border);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent-dark);
+  padding: 0.9rem 1.1rem;
+}
+
+.card-body {
+  padding: 1.2rem 1.25rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  min-height: 42px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(45, 106, 79, 0.7);
+  box-shadow: 0 0 0 0.2rem rgba(45, 106, 79, 0.12);
+}
+
+.table {
+  margin-bottom: 0;
 }
 
 .table thead th {
+  background: #f7faf8;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  border-bottom: 2px solid var(--border);
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 1rem;
+}
+
+.table tbody td {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  border-color: var(--border);
+}
+
+.table tbody tr:hover {
+  background: #f8fbf9;
+}
+
+.table-entity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.38rem;
+  flex-wrap: wrap;
+}
+
+.table-actions .btn {
+  min-width: 0;
+  padding: 0.42rem 0.6rem;
+  font-size: 0.76rem;
+  line-height: 1.2;
+  border-radius: 8px;
+}
+
+.action-btn-clientes {
+  background: #edf9f1;
+  border: 1px solid #cfe8d8;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.action-btn-clientes:hover {
+  background: #dff5e7;
+  color: var(--accent-dark);
+}
+
+.client-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: #f4f7f5;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.switch-cell {
+  display: flex;
+  align-items: center;
+}
+
+.switch-cell .form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.switch-cell .form-check-input {
+  cursor: pointer;
+}
+
+.switch-cell .form-check-label {
+  margin-bottom: 0;
 }
 
 .status-dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  margin-right: 6px;
+  margin-right: 8px;
 }
 
 .status-dot.ok { background: #2d6a4f; }
@@ -94,40 +246,134 @@ body {
 
 .home-tile {
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card-bg);
-  padding: 2rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+  padding: 2rem 1.5rem;
   text-align: left;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
   display: block;
   text-decoration: none;
   color: var(--text);
+  box-shadow: 0 10px 22px rgba(18, 61, 52, 0.04);
 }
 
 .home-tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px rgba(18, 61, 52, 0.08);
   color: var(--text);
+  text-decoration: none;
 }
 
 .home-tile .tile-icon {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--accent);
+}
+
+.home-tile h2 {
+  margin-bottom: 0.5rem;
 }
 
 .filiais-chip {
   display: inline-block;
-  background: #e9f5ee;
+  background: var(--soft);
   color: var(--accent-dark);
-  border-radius: 20px;
-  padding: 2px 10px;
-  font-size: 0.75rem;
-  margin: 2px;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin: 3px;
 }
 
 .empty-state {
   text-align: center;
   color: var(--muted);
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+}
+
+#alertaClientes,
+#alertaFiliais {
+  margin-bottom: 1rem;
+}
+
+#filiaisCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f9fbfa 0%, #f3f8f4 100%);
+}
+
+#filiaisCheckboxes .form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 170px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #dfe9e2;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#filiaisCheckboxes .form-check:hover {
+  border-color: rgba(45, 106, 79, 0.45);
+  box-shadow: 0 4px 12px rgba(45, 106, 79, 0.08);
+}
+
+#filiaisCheckboxes .form-check-input,
+#filiaisCheckboxes .form-check-label {
+  cursor: pointer;
+  margin: 0;
+}
+
+#filiaisCheckboxes .form-check-inativa {
+  opacity: 0.7;
+}
+
+#filiaisCheckboxes .form-check-inativa .form-check-label {
+  color: var(--muted);
+}
+
+#filiaisCheckboxes .form-check-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+#filiaisCheckboxes .form-check-input:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(45, 106, 79, 0.15);
+}
+
+.modal-content {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border);
+  background: #f9fbfa;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 767px) {
+  .navbar-custom .navbar-nav {
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  main.container {
+    padding-top: 1.25rem;
+  }
 }
 

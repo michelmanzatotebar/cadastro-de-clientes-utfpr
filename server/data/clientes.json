@@ -10,5 +10,18 @@
     "filiais": [
       "1786732338139"
     ]
+  },
+  {
+    "id": "1786760477478",
+    "nome": "Teste abv",
+    "idade": 52,
+    "email": "acv@teste.com",
+    "sexo": "Masculino",
+    "telefone": "56666666",
+    "logradouro": "rua dos alfeneiros",
+    "filiais": [
+      "1786732338139",
+      "1786760427421"
+    ]
   }
 ]

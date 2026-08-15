@@ -6,5 +6,13 @@
     "emailFilial": "teste@email.com",
     "status": true,
     "telefone": "6799999999"
+  },
+  {
+    "id": "1786760427421",
+    "nomeFilial": "Teste 03",
+    "logradouro": "Rua dos Alfeneiros",
+    "emailFilial": "teste@hmail.com",
+    "status": true,
+    "telefone": "48888888888"
   }
 ]
