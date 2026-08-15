@@ -46,21 +46,30 @@ function linhaFilial(filial, clientes) {
 
   return `
     <tr>
-      <td>${filial.nomeFilial}</td>
+      <td>
+        <div class="table-entity">
+          <strong>${filial.nomeFilial}</strong>
+        </div>
+      </td>
       <td>${filial.logradouro}</td>
       <td>${filial.emailFilial}</td>
       <td>${filial.telefone}</td>
       <td>
-        <div class="form-check form-switch mb-0">
-          <input class="form-check-input" type="checkbox" data-toggle-status="${filial.id}" ${filial.status ? "checked" : ""}>
-          <label class="form-check-label small">${filial.status ? "Ativa" : "Inativa"}</label>
+        <div class="switch-cell">
+          <div class="form-check form-switch mb-0">
+            <input class="form-check-input" type="checkbox" data-toggle-status="${filial.id}" ${filial.status ? "checked" : ""}>
+          </div>
         </div>
       </td>
-      <td>${totalClientes} cliente(s)</td>
+      <td>
+        <span class="client-count">${totalClientes} cliente${totalClientes === 1 ? "" : "s"}</span>
+      </td>
       <td class="text-end">
-        <button class="btn btn-sm btn-outline-primary" data-clientes="${filial.id}">Clientes</button>
-        <button class="btn btn-sm btn-outline-secondary" data-editar="${filial.id}">Editar</button>
-        <button class="btn btn-sm btn-outline-danger" data-excluir="${filial.id}">Excluir</button>
+        <div class="table-actions">
+          <button class="btn btn-sm action-btn action-btn-clientes" data-clientes="${filial.id}">Vínculos</button>
+          <button class="btn btn-sm btn-outline-secondary" data-editar="${filial.id}">Editar</button>
+          <button class="btn btn-sm btn-outline-danger" data-excluir="${filial.id}">Excluir</button>
+        </div>
       </td>
     </tr>`;
 }
