@@ -37,9 +37,10 @@ Permite cadastrar, visualizar, editar e remover clientes, com persistência de d
 git clone https://github.com/seu-usuario/cadastro-clientes-utfpr
 
 # Instale as dependências
-npm install
+npm install na pasta raiz, npm install na pasta server
 
-# Inicie o servidor (comando a definir)
+# Inicie o servidor 
+npm start na pasta raiz, npm start na pasta server
 ```
 
 ---
